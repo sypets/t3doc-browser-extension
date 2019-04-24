@@ -1,0 +1,38 @@
+/*
+.rst-content {
+    overflow: hidden;
+    max-width: 100ch;
+}
+*/
+
+/** set a maximum with */
+@media screen and (min-width: 1025px) /* Desktop */ {
+    div.document {
+        overflow: hidden;
+        /** this does not work well for all devices */
+        /* max-width: 100ch; */
+
+        max-width: 1024px;
+    }
+}
+
+/* increase margin for admonitions (notes, hint, important etc.) */
+div.rst-content div.document div.section div.admonition
+{
+    margin: 2ch !important;
+}
+
+/* images with larger margin */
+div.figure {
+    margin: 5ch !important;
+}
+
+/* image with drop-shadow */
+div.figure > img {
+    box-shadow: 0 4px 20px #bababa;
+}
+
+/* make top arrows more visible */
+span.fa-arrow-circle-right, span.fa-arrow-circle-left {
+    color: black;
+}
