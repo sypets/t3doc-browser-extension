@@ -14,34 +14,26 @@
 
 }
 
-/** generic version button styles */
 span.top-version {
-    border-radius: 10px;
-    border-style: solid;
-    border-width: 2px;
-    border-color: darkgray;
-    padding: 5px;
-    margin-left: 2px;
-    margin-right: 2px;
+    margin-right: 5px;
 }
 
 /** version button that links to fallback page (because current page
     not available for current version
  */
-span.top-version-not-same-page {
-    background: darkgray;
+span.top-version-not-same-page a {
+    background: darkgray!important;
 }
 
 /** version button that links to same page */
-span.top-version-same-page {
+span.top-version-same-page a {
     font-weight: bold;
 }
 
 /** version button for current version */
 span.top-version-current {
     font-weight: bold;
-    background: black;
-    color: white;
+
 }
 
 #top-version-more {

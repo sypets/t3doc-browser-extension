@@ -94,7 +94,7 @@ function getVersionList(element)
     {
         if (xmlhttp.readyState==4 && xmlhttp.status==200)
         {
-            var result = parseVersionResults(xmlhttp.responseText, currentUrl);
+            var result = generateVersionSelector(xmlhttp.responseText, currentUrl);
             element.innerHTML = result;
         }
     }
@@ -117,7 +117,7 @@ function getVersionList(element)
  * @param originalUrl
  * @returns {string}
  */
-function parseVersionResults(str, originalUrl)
+function generateVersionSelector(str, originalUrl)
 {
     /* do not match for 1 file versions: "In one file" */
     var regex = /<a href="(.*)">((?!In one file).*)<\/a>/g;
@@ -151,7 +151,7 @@ function parseVersionResults(str, originalUrl)
 
         var url = urls[i];
         var version = anchortexts[i];
-        var link = links[i];
+        var link = '<a href="' + url + '" class="btn btn-neutral">' + version + '</a>';
         var isSame = false;
 
         // check if other version points to same page
@@ -183,7 +183,7 @@ function parseVersionResults(str, originalUrl)
     }
 
     if (len >= 4) {
-        result += '<span><a href="#" id="top-version-more-link" title="Show more versions. You can also scroll down and click on <<Related Links>> in bottom left to see all available versions."> ...</a></span>';
+        result += '<span><a href="#" id="top-version-more-link" class="btn btn-neutral" title="Show more versions. You can also scroll down and click on <<Related Links>> in bottom left to see all available versions."> ...</a></span>';
     }
 
 
