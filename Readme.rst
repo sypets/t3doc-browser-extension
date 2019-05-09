@@ -37,17 +37,37 @@ GitHub repo: https://github.com/TYPO3-Documentation/t3SphinxThemeRtd
 Features
 ========
 
-* because the current version selector is somewhat hidden, we display
-  the first few versions as links in the top left
-* versions that have a corresponding exact page are displayed with
-  white background, versions that do not with grey (see also tooltip)
+**version selector:**
+
+Because the current version selector is somewhat hidden, we display
+the first few versions as links in the top right. This has the advantage,
+that it is immediately visible, if the page is available in other versions.
+Less clicking is necessary. With the current version selector, you always
+need 2 clicks.
+
+We only display the latest versions, because with increasing number of versions
+there are layout problems on mobile. Since TYPO3 7.6 is in ELTS and 6.2 and later
+are not even supported anymore, this should be enough.
+
+If you click on the "..." for more versions, this should open the (current)
+version selector. Currently, this does not work on mobile. (We should either
+get this to work or omit the ... on mobile).
+
+Versions that have a corresponding exact page are displayed in bold
+with default background color, versions that do not are displayed
+in non-bold with a darker background color (see also tooltip for explanation)
+
+**readabiliy:**
+
 * because text is not well readable on wide screens, we set a maximum
   width
 * because pages are not well readable with images (with text):
 
-  * always set a drop-shadow
+  * always set a drop-shadow for images
   * make the drop-shadow more visible
   * add extra padding around images
+
+**usability:**
 
 * previous / next button on top is barely visible: make it more visible
 
@@ -139,5 +159,7 @@ Feedback
 If you find a problem, please open an issue:
 
 https://github.com/sypets/t3doc-chrome-extension/issues/new
+
+Use the dedicated feedback issue for general feedback: https://github.com/sypets/t3doc-chrome-extension/issues/1
 
 Additionally, contribution is appreciated and pull requests are welcome!
