@@ -30,9 +30,7 @@ This is an experimental browser plugin for **testing some theme changes** for
 TYPO3 documentation on https://docs.typo3.org
 
 The changes tested with this plugin should eventually be applied to the
-official t3ShpinxThemeRtd:
-
-GitHub repo: https://github.com/TYPO3-Documentation/t3SphinxThemeRtd
+official t3ShpinxThemeRtd: https://github.com/TYPO3-Documentation/t3SphinxThemeRtd
 
 Features
 ========
@@ -90,13 +88,6 @@ installed the browser extension):
 * set maximum width: https://docs.typo3.org/typo3cms/CoreApiReference/Introduction/Index.html
 * images: https://docs.typo3.org/typo3cms/GettingStartedTutorial/8.7/GeneralPrinciples/BackendAndFrontend/Index.html
 
-Current Status
-==============
-
-The changes to the images (drop-shadow and margin) have improved every
-page with images that we tested.
-
-There are still some known issues with version selector and max width.
 
 Known Problems
 ==============
