@@ -49,10 +49,6 @@ We only display the latest versions, because with increasing number of versions
 there are layout problems on mobile. Since TYPO3 7.6 is in ELTS and 6.2 and later
 are not even supported anymore, this should be enough.
 
-If you click on the "..." for more versions, this should open the (current)
-version selector. Currently, this does not work on mobile. (We should either
-get this to work or omit the ... on mobile).
-
 Versions that have a corresponding exact page are displayed in bold
 with default background color, versions that do not are displayed
 in non-bold with a darker background color (see also tooltip for explanation)
@@ -105,12 +101,6 @@ There are still some known issues with version selector and max width.
 Known Problems
 ==============
 
-version selector
-
-* Clicking on the "..." link for the versions currently does not work for mobile
-  devices.
-
-
 maximum width
 
 * On some pages with tables, the tables might be cut off
@@ -127,6 +117,8 @@ https://docs.typo3.org/typo3cms/CoreApiReference/CodingGuidelines/CglPhp/PhpFile
 
 We did experiment a bit with the maximum width - the current solution is
 a tradeoff, but definitely makes the text more readable on a lot of pages.
+
+For more known problems, see list of issues: https://github.com/sypets/t3doc-chrome-extension/issues/
 
 Testing
 =======

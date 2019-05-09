@@ -25,12 +25,17 @@ moreVersionsLink.addEventListener('click', openMoreVersions);
  */
 function openMoreVersions()
 {
-    window.scrollTo(0, document.body.scrollHeight);
+    var navTop = document.querySelector("[data-toggle='wy-nav-top']");
+    if (navTop != null) {
+        navTop.click();
+    }
 
-    //var clickableVersionElement = document.querySelector('.rst-current-version');
-    var clickableVersionElement = document.getElementById('relatedLinksText');
+    var clickableVersionElement = document.querySelector('.rst-current-version');
+    //var clickableVersionElement = document.getElementById('relatedLinksText');
     if (clickableVersionElement != null) {
         clickableVersionElement.click();
+    } else {
+        alert('click on <<Related Links>> on the bottom to show more versions');
     }
 }
 
@@ -182,7 +187,7 @@ function generateVersionSelector(str, originalUrl)
 
     }
 
-    if (len >= 4) {
+    if (len > 4) {
         result += '<span><a href="#" id="top-version-more-link" class="btn btn-neutral" title="Show more versions. You can also scroll down and click on <<Related Links>> in bottom left to see all available versions."> ...</a></span>';
     }
 
