@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "T3doc",
   "description": "Theme optimizations for TYPO3 documentation on https://docs.typo3.org (experimental!)",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Sybille Peters",
   "content_scripts": [
     {
