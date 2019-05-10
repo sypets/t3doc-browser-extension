@@ -53,6 +53,9 @@ We only display the latest versions, because with increasing number of versions
 there are layout problems on mobile. Since TYPO3 7.6 is in ELTS and 6.2 and later
 are not even supported anymore, this should be enough.
 
+If there are more versions available, the button "..." automatically opens the
+current version selector (under "Related Links").
+
 Versions that have a corresponding exact page are displayed in bold
 with default background color, versions that do not are displayed
 in non-bold with a darker background color (see also tooltip for explanation)
