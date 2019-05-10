@@ -9,7 +9,7 @@ Installation
 
 #. Download::
 
-      git clone git@github.com:sypets/t3doc-chrome-extension.git
+      git clone https://github.com/sypets/t3doc-chrome-extension.git
 
 
 #. In browser address bar, go to `chrome://extensions/ <chrome://extensions/>`__
