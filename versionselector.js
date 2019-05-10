@@ -176,7 +176,7 @@ function generateVersionSelector(str, originalUrl)
                         + version
                         + '" class="top-version top-version-same-page">';
                 } else {
-                    result += '<span title="Current page not available in other version, show best match in version'
+                    result += '<span title="Current page not available in other version, show best match in version '
                         + version
                         + '" class="top-version top-version-not-same-page">';
                 }
@@ -188,7 +188,7 @@ function generateVersionSelector(str, originalUrl)
     }
 
     if (len > 4) {
-        result += '<span><a href="#" id="top-version-more-link" class="btn btn-neutral" title="Show more versions. You can also scroll down and click on <<Related Links>> in bottom left to see all available versions."> ...</a></span>';
+        result += '<span><a href="#" id="top-version-more-link" class="btn btn-neutral" title="Show more versions. You can also click on <<Related Links>> in bottom left to see all available versions (on mobile, open menu first)."> ...</a></span>';
     }
 
 
