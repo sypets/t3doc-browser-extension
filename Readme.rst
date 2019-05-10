@@ -9,6 +9,12 @@ Installation
 
 #. Download::
 
+   Download the zip or tar.gz of the latest release: https://github.com/sypets/t3doc-chrome-extension/releases
+
+   Extract the archive.
+
+   Alternatively, use git:
+
       git clone https://github.com/sypets/t3doc-chrome-extension.git
 
 
