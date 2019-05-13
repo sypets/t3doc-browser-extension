@@ -228,5 +228,5 @@ function removeIndexFromUrl(url)
 
 function removeVersionFromUrl(url)
 {
-   return url.replace(/\/(latest|[0-9]+(\.[0-9])*)\//, '/');
+   return url.replace(/\/(latest|master|[0-9]+(\.[0-9])*)\//, '/');
 }
