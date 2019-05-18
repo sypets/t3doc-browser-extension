@@ -2,26 +2,36 @@
 t3doc-chrome-extension
 ======================
 
-Chrome Extension for TYPO3 documentation browsing
+Browser extension for TYPO3 documentation browsing. Should work with Firefox, Google Chrome, Google Chromium
+
+
+Download
+========
+
+Download the zip or tar.gz of the latest release: https://github.com/sypets/t3doc-chrome-extension/releases
+
+Extract the archive.
+
+Alternatively, use git:
+
+  git clone https://github.com/sypets/t3doc-chrome-extension.git
+
+
 
 Installation
 ============
 
-#. Download::
+**On Google Chrome or Chromium:**
 
-   Download the zip or tar.gz of the latest release: https://github.com/sypets/t3doc-chrome-extension/releases
+#. In browser address bar, go to: chrome://extensions/
+#. Click "Load unpacked"
+#. choose the folder t3doc-chrome-extension (you extracted in "Download").
 
-   Extract the archive.
+**On Firefox:**
 
-   Alternatively, use git:
-
-      git clone https://github.com/sypets/t3doc-chrome-extension.git
-
-
-#. In browser address bar, go to `chrome://extensions/ <chrome://extensions/>`__
-
-#. Click "Load unpacked" and choose the folder t3doc-chrome-extension.
-
+#. In browser address bar, go to: "about:debugging"
+#. "Load Temporary Add-on"
+#. Choose the folder t3doc-chrome-extension (you extracted in "Download").
 
 Supported Browsers
 ==================
