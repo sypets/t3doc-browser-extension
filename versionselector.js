@@ -128,8 +128,9 @@ function generateVersionSelector(str, originalUrl)
     var regex = /<a href="(.*)">((?!In one file).*)<\/a>/g;
     match = regex.exec(str);
     var result = '';
-    // assume latest by default
-    var currentVersion = 'latest';
+    // assume master en-US by default
+    var currentVersion = 'master en-US';
+    var maxnumberofversions = 3;
 
     var anchortexts = [];
     var links = [];
@@ -137,10 +138,13 @@ function generateVersionSelector(str, originalUrl)
 
     while (match != null) {
         var anchortext = match[2];
+        var tmp = anchortext.split(' ');
+        var version = tmp[0];
+        var language = tmp[1];
         var url = match[1];
         var link = match[0];
 
-        if (originalUrl.includes(anchortext)) {
+        if (originalUrl.includes(version + '/' + language)) {
             currentVersion = anchortext;
         }
         anchortexts.push(anchortext);
@@ -156,21 +160,29 @@ function generateVersionSelector(str, originalUrl)
 
         var url = urls[i];
         var version = anchortexts[i];
-        var link = '<a href="' + url + '" class="btn btn-neutral">' + version + '</a>';
+        //var link = '<a href="' + url + '" class="btn btn-neutral">' + version + '</a>';
+        var link = '<a href="' + url + '">' + version + '</a>';
         var isSame = false;
 
         // check if other version points to same page
         // if not, will be styled differently
         if (isUrlForSamePage(url, originalUrl)) {
             isSame = true;
+            console.log('is same page');
+        } else {
+            console.log('is other page');
         }
 
+        console.log('currentversion=' + currentVersion + ' anchortexts=' + anchortexts[i]);
 
         if (currentVersion == anchortexts[i]) {
-            result += '<span title="current version" class="top-version top-version-current">' + version + '</span>';
+            result += '<span title="current version" class="top-version top-version-current">'
+                //+ version
+                + link
+                + '</span>';
         } else {
-            // do not show more than 4 versions
-            if (i < 4) {
+            // do not show more than maxnumberofversions versions
+            if (i < maxnumberofversions) {
                 if (isSame) {
                     result += '<span title="Show current page in version '
                         + version
@@ -187,7 +199,7 @@ function generateVersionSelector(str, originalUrl)
 
     }
 
-    if (len > 4) {
+    if (len > maxnumberofversions) {
         result += '<span><a href="#" id="top-version-more-link" class="btn btn-neutral" title="Show more versions. You can also click on <<Related Links>> in bottom left to see all available versions (on mobile, open menu first)."> ...</a></span>';
     }
 
@@ -213,7 +225,13 @@ function isUrlForSamePage(url, originalUrl)
 
 function normalizeUrl(url)
 {
-    return removeTrailingSlashFromUrl(removeIndexFromUrl(removeVersionFromUrl(url)));
+    return removeLanguageFromUrl(removeVersionFromUrl(removeIndexFromUrl(removeTrailingSlashFromUrl(getPath(url)))))
+}
+
+/* return only path from URL */
+function getPath(url)
+{
+    return url.replace(/https?:\/\/[^\/]*/, '');
 }
 
 function removeTrailingSlashFromUrl(url)
@@ -229,4 +247,9 @@ function removeIndexFromUrl(url)
 function removeVersionFromUrl(url)
 {
    return url.replace(/\/(latest|master|[0-9]+(\.[0-9])*)\//, '/');
+}
+
+function removeLanguageFromUrl(url)
+{
+    return url.replace(/\/[a-z]{2}-[a-z]{2}]/, '');
 }

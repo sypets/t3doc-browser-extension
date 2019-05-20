@@ -70,7 +70,7 @@ Versions that have a corresponding exact page are displayed in bold
 with default background color, versions that do not are displayed
 in non-bold with a darker background color (see also tooltip for explanation)
 
-**readabiliy:**
+**readability:**
 
 * because text is not well readable on wide screens, we set a maximum
   width
