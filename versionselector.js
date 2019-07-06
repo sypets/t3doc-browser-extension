@@ -145,7 +145,11 @@ function generateVersionSelector(str, originalUrl)
         var link = match[0];
 
         if (originalUrl.includes(version + '/' + language)) {
-            currentVersion = anchortext;
+            currentVersion = version;
+        }
+
+        if (version) {
+            anchortext = version;
         }
         anchortexts.push(anchortext);
         links.push(link);
